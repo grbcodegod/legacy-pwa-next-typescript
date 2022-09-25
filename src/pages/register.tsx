@@ -1,4 +1,4 @@
-import { useState, forwardRef } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import { useDispatch, useSelector } from 'react-redux'
@@ -27,13 +27,13 @@ export default function Register() {
   const router = useRouter()
   const dispatch = useDispatch()
   const { enqueueSnackbar } = useSnackbar();
-  const [user, setUser] = useState({ 
-    fullname:'',
-    email:'', 
-    password: '', 
-    password1:'',
-    register_referral_code:'', 
-    phone:'' 
+  const [user, setUser] = useState({
+    fullname: '',
+    email: '',
+    password: '',
+    password1: '',
+    register_referral_code: "",
+    phone: ''
   })
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
@@ -41,6 +41,12 @@ export default function Register() {
   const goHome = () => {
     router.push('/login')
   }
+
+  useEffect(() => {
+    let params = (new URL(document.location)).searchParams;
+    let referral = params.get("referral");
+    setUser({ ...user, register_referral_code: referral, })
+  }, [])
 
   const saveUser = async () => {
     try {
@@ -52,12 +58,12 @@ export default function Register() {
           enqueueSnackbar('Successfully registered!', { variant: 'success' })
           enqueueSnackbar('Welcome', { variant: 'success' })
           setUser({
-            fullname:'',
-            email:'', 
-            password: '', 
-            password1:'',
-            register_referral_code:'', 
-            phone:'' 
+            fullname: '',
+            email: '',
+            password: '',
+            password1: '',
+            register_referral_code: '',
+            phone: ''
           })
           router.push('/app')
         } else {
@@ -225,7 +231,7 @@ export default function Register() {
                       id='form-layouts-basic-password'
                       type='text'
                       aria-describedby='form-layouts-basic-password-helper'
-                      value={user.register_referral_code || ''}
+                      value={user.register_referral_code}
                       onChange={(e) => setUser({ ...user, register_referral_code: e.target.value })}
                       sx={{
                         '& legend': { display: 'none' },

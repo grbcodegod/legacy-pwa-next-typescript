@@ -132,6 +132,10 @@ export function AppToolbar() {
             checked={state.theme === 'dark'}
             onChange={toggleTheme}
           /> */}
+          {/* <ThemeSwitch
+            checked={state.theme === 'dark'}
+            onChange={toggleTheme}
+          /> */}
         </Box>
       </Toolbar>
     </AppBar>

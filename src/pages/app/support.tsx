@@ -25,6 +25,10 @@ export default function Support() {
     window.location.href = "mailto:contact@legacy1.co.uk?subject=Subject&body=message%20goes%20here";
   }
 
+  const goTelegram=()=>{
+    window.location.href = "https://t.me/+6U2jXYg7nAVjZTI0";
+  }
+
   useEffect(() => {
     var accessAuth = window.localStorage.getItem('accessAuth')
     setAccessAuth(accessAuth)
@@ -109,7 +113,7 @@ export default function Support() {
           borderBottomRightRadius: 0 }}>
           <Grid container>
             <Grid item xs={12}>
-              <div style={{margin: 30, display:'flex', justifyContent: 'center'}}>
+              <div style={{margin: '30px 30px 10px 30px', display:'flex', justifyContent: 'center', cursor:'pointer'}} onClick={()=>goTelegram()}>
                 <img src='../../../telegram.png' width={40} style={{ marginTop: 25 }} />
               </div>
             </Grid>
