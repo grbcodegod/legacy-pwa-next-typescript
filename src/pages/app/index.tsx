@@ -84,7 +84,7 @@ export default function Home() {
           {/* </Box> */}
           <div style={{display:'flex',justifyContent:'center'}}>
           <div style={{width:215,height:215}}>
-          <CircularProgressbarWithChildren value={66}
+          <CircularProgressbarWithChildren value={percentage}
             styles={buildStyles({
               pathColor: '#6D43FD',
               textColor: '#FC8440',
