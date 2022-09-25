@@ -20,7 +20,9 @@ export default function Home() {
   const { enqueueSnackbar } = useSnackbar();
   const [project, setProject] = useState({ fund_raised: 0, fund_target: 0 })
   const [accessAuth, setAccessAuth] = useState('')
-  const [auth, setAuth] = useState('')
+  const [auth, setAuth] = useState({
+    fullname: ''
+  })
   const [percentage, setPercentage] = useState(0)
 
   const goPledge = () => {
