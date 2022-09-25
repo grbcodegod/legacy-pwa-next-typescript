@@ -1,0 +1,156 @@
+.content {
+    position: relative;
+    float: left;
+    background-color: #FBFCFF;
+    border-radius: 40px;
+    margin-bottom: 90px;
+}
+
+.cnt {
+    float: 'left';
+}
+
+.p_title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.pledge_title {
+    padding-left: 12px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: #17172C
+}
+
+.pledge_desc {
+    padding: 0 78px 0 12px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #8A8A8A
+}
+
+body {
+    font: 'Poppins'
+}
+
+.pay_desc {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 22px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FC2222;
+}
+
+.pay_desc1 {
+    padding: 12px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #000000;
+}
+
+.div_pay_btn {
+    float: right;
+    margin: 10px 14px;
+}
+
+/* .pay_btn {
+    width: 103px;
+    height: 48px;
+    background-color: #0E1446;
+    border-radius: 10px;
+} */
+
+.log_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 42px;
+    color: #0E1446;
+}
+
+.input_title {
+    text-align: left;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #848AA4;
+    padding: 0 0 5px 2px;
+}
+
+.wel_title1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wel_title2 {
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.wel_btn {
+    background-color: rgb(252, 132, 64);
+    margin: 200px 24px 50px 24px;
+    border-radius: 40px;
+    height: 76px;
+}
+
+.main {
+    min-width: 375px;
+    max-width: 520px;
+    min-height: 700px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50%;
+    /* top: 50%; */
+    /* transform: translate(-50%, -50%); */
+    transform: translateX(-50%);
+}
+
+.main_card {
+    background: #FBFCFF;
+    padding: 24px;
+    text-align: center;
+}
+
+.error {
+    color: red;
+    font-weight: 600;
+}
+
+.ms_con {
+    display: flex;
+    margin-left: 10px;
+}
+
+.ms_ml_10 {
+    margin-left: 10px;
+}
+
+.pro_back {
+    width: 165px;
+    height: 165px;
+    border-radius: 80px;
+    background: linear-gradient(180deg, #d0d0d5 0%, #FAFAFF 100%);
+    box-shadow: inset 3.30274e-16px 5.39378px 5.39378px rgb(222 222 222 / 50%), inset -3.30274e-16px -5.39378px 5.39378px rgb(255 255 255 / 50%);
+}

@@ -1,0 +1,116 @@
+{
+  "theme_color": "#4a90e2",
+  "background_color": "#4a90e2",
+  "display": "standalone",
+  "id": "material-pwa.vercel.app",
+  "start_url": "/app",
+  "name": "Legacy",
+  "short_name": "Legacy",
+  "description": "Legacy PWA",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "app/pwa-icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "app/pwa-icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Go to Home",
+      "short_name": "Home",
+      "description": "Open home section of the applications",
+      "url": "app",
+      "icons": [
+        {
+          "src": "app/shortcuts/home-shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Go to Pledge",
+      "short_name": "Pledge",
+      "description": "Open pledge section of the applications",
+      "url": "app/pledge",
+      "icons": [
+        {
+          "src": "app/shortcuts/home-shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Go to Login",
+      "short_name": "Login",
+      "description": "Open login section of the applications",
+      "url": "app/login",
+      "icons": [
+        {
+          "src": "app/shortcuts/home-shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Go to Register",
+      "short_name": "Register",
+      "description": "Open register section of the applications",
+      "url": "app/register",
+      "icons": [
+        {
+          "src": "app/shortcuts/home-shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Go to Settings",
+      "short_name": "Settings",
+      "description": "Open settings section of the applications",
+      "url": "app/settings",
+      "icons": [
+        {
+          "src": "app/shortcuts/settings-shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Go to Profile",
+      "short_name": "Profile",
+      "description": "Open profile section of the applications",
+      "url": "app/settings?section=profile",
+      "icons": [
+        {
+          "src": "app/shortcuts/profile-shortcut.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "app/promotion/screen-1.png",
+      "sizes": "1080x2280",
+      "type": "image/png"
+    },
+    {
+      "src": "app/promotion/screen-2.png",
+      "sizes": "1080x2280",
+      "type": "image/png"
+    },
+    {
+      "src": "app/promotion/screen-3.png",
+      "sizes": "1080x2280",
+      "type": "image/png"
+    }
+  ]
+}
