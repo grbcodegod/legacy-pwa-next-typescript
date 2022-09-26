@@ -106,7 +106,7 @@ export default function MonthlyCommission() {
                       <Grid item xs={9}>
                         <div style={{paddingTop: 12}}>
                           <Typography style={{ color: '#0E1446', fontSize: 30, fontWeight: 600 }}>${data.referral_payout_sum.toLocaleString()}</Typography>
-                          <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>Referral Balance</Typography>
+                          <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>Total Commissions To </Typography>
                         </div>
                       </Grid>
                     </Grid>
@@ -144,7 +144,7 @@ export default function MonthlyCommission() {
                           <p style={{paddingTop: 13}}>{p.percentage}%</p>
                         </Grid>
                         <Grid item xs={3}>
-                          <p style={{paddingTop: 13}}>${p.base_amount.toFixed(2).toLocaleString()}</p>
+                          <p style={{paddingTop: 13}}>${(p.amount*5).toFixed(2).toLocaleString()}</p>
                         </Grid>
                         <Grid item xs={4}>
                           <p style={{paddingTop: 13}}>${p.amount.toFixed(2).toLocaleString()}</p>

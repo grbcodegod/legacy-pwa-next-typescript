@@ -118,7 +118,8 @@ export default function Account() {
             <Grid item xs={6}>
               <Card style={{ border: '1px solid #0E1446', borderRadius: 20, width: 150, height: 150, marginLeft: 12, marginRight: 24, cursor: 'pointer' }} onClick={() => goReferralCommission()}>
                 <img src='../../../referral_balance.png' width={40} style={{ marginTop: 20 }} />
-                <Typography style={{ color: '#0E1446', fontSize: 26, fontWeight: 600 }}>${data.referral_payout_sum.toLocaleString()}</Typography>
+                {/* <Typography style={{ color: '#0E1446', fontSize: 26, fontWeight: 600 }}>${data.referral_payout_sum.toLocaleString()}</Typography> */}
+                <Typography style={{ color: '#0E1446', fontSize: 26, fontWeight: 600 }}>$2,000</Typography>
                 <Typography style={{ color: '#0E1446', fontSize: 13, fontWeight: 600 }}>Referral balance</Typography>
               </Card>
             </Grid>

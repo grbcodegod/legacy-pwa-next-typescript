@@ -141,8 +141,8 @@ export default function Profit() {
                           <p style={{paddingTop: 13}}>${p.amount.toLocaleString()}</p>
                         </Grid>
                         <Grid item xs={4}>
-                          {/* <p style={{paddingTop: 13}}>{p.percentage.toFixed(2)}%</p> */}
-                          <p style={{paddingTop: 13}}>{new Number(4.5).toFixed(2)}%</p>
+                          <p style={{paddingTop: 13}}>{p.percentage.toFixed(2)}%</p>
+                          {/* <p style={{paddingTop: 13}}>{new Number(4.5).toFixed(2)}%</p> */}
                         </Grid>
                       </Grid>
                     </Card>
