@@ -124,7 +124,7 @@ export default function Account() {
               </Card>
             </Grid>
             <Grid item xs={6}>
-              <Card style={{ border: '1px solid #0E1446', borderRadius: 20, width: 150, height: 150, marginLeft: 12, marginRight: 24, cursor: 'pointer' }} onClick={() => goReferrals()}>
+              <Card style={{ border: '1px solid #0E1446', borderRadius: 20, width: 150, height: 150, marginLeft: 12, marginRight: 24, cursor: 'pointer' }} onClick={() => goReferralCommission()}>
                 <img src='../../../referral_balance.png' width={40} style={{ marginTop: 20 }} />
                 {/* <Typography style={{ color: '#0E1446', fontSize: 26, fontWeight: 600 }}>${data.referral_payout_sum.toLocaleString()}</Typography> */}
                 <Typography style={{ color: state.theme === 'dark' ? '#fff':'#0E1446', fontSize: 26, fontWeight: 600 }}>${data.referral_volume.toLocaleString()}</Typography>
@@ -156,7 +156,7 @@ export default function Account() {
               </div>
             </Grid>
             <Grid item xs={12}>
-              <div style={{margin: '24px 34px 30px 34px'}}>
+              <div style={{margin: '24px 34px 20px 34px'}}>
                 <Button type='submit' variant='contained' fullWidth
                   style={{ height: 64, backgroundColor: '#6D43FD',textTransform: 'none',color:'#fff' }}
                   sx={{ borderRadius: '15px', fontSize: 18, fontWeight: 600 }}
@@ -164,6 +164,17 @@ export default function Account() {
                 >
                   {/* Referrals / Commissions */}
                   Commissions Breakdown
+                </Button>
+              </div>
+            </Grid>
+            <Grid item xs={12}>
+              <div style={{margin: '0 34px 30px 34px'}}>
+                <Button type='submit' variant='contained' fullWidth
+                  style={{ height: 64, backgroundColor: '#6D43FD',textTransform: 'none',color:'#fff' }}
+                  sx={{ borderRadius: '15px', fontSize: 18, fontWeight: 600 }}
+                  onClick={()=>goReferrals()}
+                >
+                  My Referrals
                 </Button>
               </div>
             </Grid>
@@ -204,18 +215,20 @@ export default function Account() {
             <Grid item xs={12}>
               <div style={{ padding: 24, display: 'flex', justifyContent: 'center' }}>
               <Grid item xs={2}>
-                <div style={{float: 'right', paddingTop:15}}>
+                {/* <div style={{float: 'right', paddingTop:15}}> */}
+                <div style={{paddingTop:15}}>
                   <Avatar alt="Remy Sharp" style={{ width: 40, height: 40 }}>
                     <img src='../../../profile.png' width={40} height={40} />
                   </Avatar>
                 </div>
               </Grid>
               <Grid item xs={8}>
-                <Typography style={{ paddingTop: 5, fontSize: 20, fontWeight: 600, lineHeight: '30px', color: state.theme === 'dark' ? '#fff':'#0E1446' }}>{auth.fullname}</Typography>
-                <Typography style={{ paddingTop: 5, fontSize: 12, fontWeight: 500, lineHeight: '30px', color: '#93989F' }}>{auth.referral_code}</Typography>
+                <Typography style={{ paddingTop: 20, fontSize: 20, fontWeight: 600, lineHeight: '30px', color: state.theme === 'dark' ? '#fff':'#0E1446' }}>{auth.referral_code}</Typography>
+                {/* <Typography style={{ paddingTop: 5, fontSize: 12, fontWeight: 500, lineHeight: '30px', color: '#93989F' }}>{auth.referral_code}</Typography> */}
               </Grid>
               <Grid item xs={2}>
-                <div style={{ marginTop:15,width: 36, height: 36, borderRadius: 4, float: 'left', backgroundColor: state.theme === 'dark' ? '#1A1919':'#0E1446' }}>
+                {/* <div style={{ marginTop:15,width: 36, height: 36, borderRadius: 4, float: 'left', backgroundColor: state.theme === 'dark' ? '#1A1919':'#0E1446' }}> */}
+                <div style={{ marginTop:15,marginLeft:10,width: 36, height: 36, borderRadius: 4, backgroundColor: state.theme === 'dark' ? '#1A1919':'#0E1446' }}>
                   <ContentCopyOutlinedIcon style={{color:'#fff', marginTop: 6, cursor: 'pointer'}} onClick={()=>copyCode()}/>
                 </div>
               </Grid>

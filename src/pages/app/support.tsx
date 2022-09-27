@@ -175,18 +175,19 @@ export default function Support() {
             <Grid item xs={12}>
               <div style={{ padding: 24, display: 'flex', justifyContent: 'center' }}>
               <Grid item xs={2}>
-                <div style={{float: 'right', paddingTop:15}}>
+                {/* <div style={{float: 'right', paddingTop:15}}> */}
+                <div style={{paddingTop:15}}>
                   <Avatar alt="Remy Sharp" style={{ width: 40, height: 40 }}>
                     <img src='../../../profile.png' width={40} height={40} />
                   </Avatar>
                 </div>
               </Grid>
               <Grid item xs={8}>
-                <Typography style={{ paddingTop: 5, fontSize: 20, fontWeight: 600, lineHeight: '30px', color: state.theme === 'dark' ? '#fff':'#0E1446' }}>{auth.fullname}</Typography>
-                <Typography style={{ paddingTop: 5, fontSize: 12, fontWeight: 500, lineHeight: '30px', color: '#93989F' }}>{auth.referral_code}</Typography>
+                <Typography style={{ paddingTop: 20, fontSize: 20, fontWeight: 600, lineHeight: '30px', color: state.theme === 'dark' ? '#fff':'#0E1446' }}>{auth.referral_code}</Typography>
+                {/* <Typography style={{ paddingTop: 5, fontSize: 12, fontWeight: 500, lineHeight: '30px', color: '#93989F' }}>{auth.referral_code}</Typography> */}
               </Grid>
               <Grid item xs={2}>
-                <div style={{ marginTop:15,width: 36, height: 36, borderRadius: 4, float: 'left', backgroundColor: state.theme === 'dark' ? '#1A1919':'#0E1446' }}>
+                <div style={{ marginTop:15,marginLeft:10,width: 36, height: 36, borderRadius: 4, float: 'left', backgroundColor: state.theme === 'dark' ? '#1A1919':'#0E1446' }}>
                   <ContentCopyOutlinedIcon style={{color:'#fff', marginTop: 6, cursor: 'pointer'}} onClick={()=>copyCode()}/>
                 </div>
               </Grid>

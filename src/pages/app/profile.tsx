@@ -178,13 +178,13 @@ export default function Profile() {
                     <img src='../../../profile.png' width={40} height={40} />
                   </Avatar>
                 </div>
-                <div style={{padding: '0 12px'}}>
+                <div style={{padding: '15px 12px'}}>
                   <div style={{width: '100%'}}>
-                  <span style={{ paddingTop: 0, fontSize: 15, fontWeight: 600, lineHeight: '30px', color: '#0E1446' }}>{auth.fullname}</span>
+                    <span style={{ paddingTop: 0, fontSize: 20, fontWeight: 600, lineHeight: '30px', color: '#0E1446' }}>{auth.referral_code}</span>
                   </div>
-                  <div style={{width: '100%'}}>
-                  <span style={{ paddingTop: 0, fontSize: 12, fontWeight: 600, lineHeight: '30px', color: '#93989F' }}>{auth.referral_code}</span>
-                  </div>
+                  {/* <div style={{width: '100%'}}>
+                  <span style={{ paddingTop: 0, fontSize: 12, fontWeight: 600, lineHeight: '30px', color: '#0E1446' }}>{auth.fullname}</span>
+                  </div> */}
                 </div>
                 <div style={{paddingTop: 10}}>
                   <div style={{ width: 36, height: 36, borderRadius: 4, float: 'left', backgroundColor: '#0E1446' }}>
