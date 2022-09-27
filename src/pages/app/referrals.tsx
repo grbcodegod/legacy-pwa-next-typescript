@@ -31,7 +31,7 @@ const month = [
   'December'
 ]
 
-export default function ReferralCommission() {
+export default function Referrals() {
   const router = useRouter()
   const { enqueueSnackbar } = useSnackbar();
   const [auth, setAuth] = useState({
@@ -156,14 +156,14 @@ export default function ReferralCommission() {
 
   return (
     <div className='main'>
-      <ShellTitle title="Commissions Breakdown" />
+      <ShellTitle title="My Referrals" />
       <div style={{ width: '100%', backgroundImage: 'url(../../../app/back_blue.png)', height: '150px' }}>
         <div>
           <Box sx={{ mb: 2 }}>
             <div style={{ transform: 'translateY(35px)' }}>
               <WestIcon style={{ color: '#fff', marginLeft: 24, cursor: 'pointer' }} onClick={()=>router.push('/app/account')} />
             </div>
-            <Typography className='p_title' style={{fontSize: 20, fontWeight: 600}}>Commissions Breakdown</Typography>
+            <Typography className='p_title' style={{fontSize: 20, fontWeight: 600}}>My Referrals</Typography>
           </Box>
           <Card className='main_card' sx={{background: '#f2f3f6'}} style={{height: 700, borderTopLeftRadius: 30, borderTopRightRadius: 30}}>
             <Grid container>
@@ -202,14 +202,17 @@ export default function ReferralCommission() {
                   </Grid>
                   <div style={{color: '#2F394E', fontSize: 14, fontWeight: 700}}>
                     <Grid container>
-                      <Grid item xs={4}>
+                      <Grid item xs={3}>
                         <p>Referrals</p>
                       </Grid>
-                      <Grid item xs={4}>
-                        <p>Profit</p>
+                      <Grid item xs={3}>
+                        <p>Captial</p>
                       </Grid>
-                      <Grid item xs={4}>
-                        <p>Commission</p>
+                      <Grid item xs={3}>
+                        <p>Pledged</p>
+                      </Grid>
+                      <Grid item xs={3}>
+                        <p>TXID</p>
                       </Grid>
                     </Grid>
                   </div>
@@ -218,7 +221,7 @@ export default function ReferralCommission() {
                   {filters.map((p, index)=>
                     <Card sx={{marginBottom: '10px', borderRadius: '12px', fontSize: 13, fontWeight: 600, color:'#454446', boxShadow: 'none'}} key={index}>
                       <Grid container>
-                        <Grid item xs={4}>
+                        <Grid item xs={3}>
                           <div style={{paddingTop: 10}}>
                             <span>{p.app_user_name || ''}</span>
                           </div>
@@ -226,11 +229,14 @@ export default function ReferralCommission() {
                             <span>${p.base_amount?parseFloat(p.base_amount.toFixed(2)).toLocaleString() : ''}</span>
                           </div>
                         </Grid>
-                        <Grid item xs={4}>
-                          <p style={{paddingTop: 13}}>${p.amount?parseFloat(p.amount.toFixed(2)).toLocaleString() : ''}</p>
+                        <Grid item xs={3}>
+                          <p style={{paddingTop: 13}}>${p.base_amount?parseFloat(p.base_amount.toFixed(2)).toLocaleString() : ''}</p>
                         </Grid>
-                        <Grid item xs={4}>
-                          <p style={{paddingTop: 13}}>${p.amount?parseFloat((p.amount/5).toFixed(2)).toLocaleString() : ''}</p>
+                        <Grid item xs={3}>
+                          <p style={{paddingTop: 13}}></p>
+                        </Grid>
+                        <Grid item xs={3}>
+                          <p style={{paddingTop: 13}}></p>
                         </Grid>
                       </Grid>
                     </Card>
@@ -246,4 +252,4 @@ export default function ReferralCommission() {
   )
 }
 
-ReferralCommission.layout = AppLayout
+Referrals.layout = AppLayout

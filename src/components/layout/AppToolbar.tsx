@@ -10,9 +10,11 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import { Actions, useAppShell } from 'components/providers/AppShellProvider'
 import { ThemeSwitch } from 'components/ThemeSwitch'
+import { useRouter } from 'next/router'
 
 export function AppToolbar() {
   const theme = useTheme()
+  const router = useRouter()
 
   const { state, dispatch } = useAppShell()
 
@@ -56,7 +58,7 @@ export function AppToolbar() {
             height: '100%'
           }}
         >
-          <IconButton
+          {(router.pathname!=='/login' && router.pathname!=='/register') && <IconButton
             color="inherit"
             aria-label="open drawer"
             edge="start"
@@ -70,7 +72,7 @@ export function AppToolbar() {
             size="large"
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton>}
           {/* <IconButton
             color="inherit"
             aria-label="open drawer"

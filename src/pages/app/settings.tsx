@@ -15,6 +15,8 @@ import config from '../../config'
 import rootReducer from 'store/rootReducer'
 import { MobileBottomNav } from 'components'
 import { useSnackbar } from 'notistack';
+import { Actions, useAppShell } from 'components/providers/AppShellProvider'
+import { ThemeSwitch } from 'components/ThemeSwitch'
 
 const IOSSwitch = styled((props: SwitchProps) => (
   <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
@@ -69,7 +71,7 @@ const IOSSwitch = styled((props: SwitchProps) => (
 
 export default function Settings() {
   const router = useRouter()
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   const { enqueueSnackbar } = useSnackbar();
   const [auth, setAuth] = useState({
     _id: undefined,
@@ -80,10 +82,18 @@ export default function Settings() {
     register_referral_code: '',
     phone: ''
   })
+  const { state, dispatch } = useAppShell()
 
   const logout = () => {
     window.localStorage.removeItem('accessAuth')
     router.push('/login')
+  }
+
+  const toggleTheme = () => {
+    dispatch({
+      type: Actions.SET_THEME,
+      payload: state.theme === 'dark' ? 'light' : 'dark'
+    })
   }
 
   useEffect(() => {
@@ -98,12 +108,12 @@ export default function Settings() {
       <div className='main' style={{minHeight: 667}}>
         <div>
         <Card className='main_card' style={{height:667}}>
-          <CardContent>
+          <CardContent sx={{backgroundColor: state.theme === 'dark' ? '#1A1919':'#fff'}}>
             <Box sx={{ mb: 2 }}>
               <div style={{ transform: 'translateY(38px)', textAlign: 'left' }}>
-                <WestIcon style={{ color: '#0E1446', cursor: 'pointer', fontSize: 24, fontWeight: 600 }} onClick={() => router.push('/app/profile')} />
+                <WestIcon style={{ color: state.theme === 'dark' ? '#fff':'#0E1446', cursor: 'pointer', fontSize: 24, fontWeight: 600 }} onClick={() => router.push('/app/profile')} />
               </div>
-              <Typography className='p_title' style={{ color: '#0E1446', fontSize: 24, fontWeight: 600 }}>
+              <Typography className='p_title' style={{ color: state.theme === 'dark' ? '#fff':'#0E1446', fontSize: 24, fontWeight: 600 }}>
                 Settings
               </Typography>
             </Box>
@@ -125,8 +135,15 @@ export default function Settings() {
                   </div>
                 </Grid>
                 <Grid item xs={2}>
-                  <div style={{float: 'right'}}>
+                  {/* <div style={{float: 'right'}}>
                     <IOSSwitch sx={{ m: 1 }} defaultChecked />
+                  </div> */}
+                  <div style={{float: 'right', paddingTop:7}}>
+                    {/* <IOSSwitch sx={{ m: 1 }} defaultChecked /> */}
+                    <ThemeSwitch
+                      checked={state.theme === 'dark'}
+                      onChange={toggleTheme}
+                    />
                   </div>
                 </Grid>
                 <Grid item xs={10}>
@@ -135,8 +152,12 @@ export default function Settings() {
                   </div>
                 </Grid>
                 <Grid item xs={2}>
-                  <div style={{float: 'right'}}>
-                    <IOSSwitch sx={{ m: 1 }} defaultChecked />
+                  <div style={{float: 'right', paddingTop:7}}>
+                    {/* <IOSSwitch sx={{ m: 1 }} defaultChecked /> */}
+                    <ThemeSwitch
+                      checked={state.theme === 'dark'}
+                      onChange={toggleTheme}
+                    />
                   </div>
                 </Grid>
                 <Grid item xs={10}>

@@ -22,6 +22,7 @@ import axios from 'axios'
 import config from '../config'
 import rootReducer from 'store/rootReducer'
 import { useSnackbar } from 'notistack';
+import { Actions, useAppShell } from 'components/providers/AppShellProvider'
 
 export default function Register() {
   const router = useRouter()
@@ -37,6 +38,7 @@ export default function Register() {
   })
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirm, setShowConfirm] = useState(false)
+  const { state } = useAppShell()
 
   const goHome = () => {
     router.push('/login')
@@ -88,7 +90,7 @@ export default function Register() {
               <div style={{ transform: 'translateY(40px)', textAlign: 'left' }}>
                 <WestIcon style={{ color: '#93989F', cursor: 'pointer' }} onClick={() => goHome()} />
               </div>
-              <Typography className='p_title' style={{ color: '#0E1446' }}>
+              <Typography className='p_title' style={{ color: state.theme === 'dark' ? '#fff':'#0E1446' }}>
                 Sign Up
               </Typography>
             </Box>
@@ -288,7 +290,7 @@ export default function Register() {
                     }}
                   >
                     <Button type='submit' variant='contained' fullWidth
-                      style={{ height: 64, backgroundColor: '#6D43FD',textTransform: 'none' }}
+                      style={{ height: 64, backgroundColor: '#6D43FD',textTransform: 'none',color:state.theme === 'dark' ? '#fff':'#0E1446' }}
                       sx={{ borderRadius: '15px', fontSize: 20 }}
                       onClick={() => saveUser()}
                     >
@@ -298,7 +300,7 @@ export default function Register() {
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Typography style={{ color: '#848AA4', paddingRight: 10 }}>Already have an account?
+                    <Typography style={{ color: state.theme === 'dark' ? '#fff':'#848AA4', paddingRight: 10 }}>Already have an account?
                     </Typography>
                     <Link passHref href='/login'>
                       <Typography style={{ color: '#6D43FD', cursor: 'pointer' }}>Sign In</Typography>

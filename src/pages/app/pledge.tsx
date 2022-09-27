@@ -11,10 +11,13 @@ import axios from 'axios'
 import config from '../../config'
 import { useSnackbar } from 'notistack';
 import { MobileBottomNav, } from 'components'
+import { useAppShell } from 'components/providers/AppShellProvider'
 
 export default function Pledge() {
   const router = useRouter()
   const { enqueueSnackbar } = useSnackbar();
+  const { state } = useAppShell()
+
   const [auth, setAuth] = useState({
     _id: undefined,
     fullname: '',
@@ -203,10 +206,10 @@ export default function Pledge() {
             <Typography className='p_title'>Pledge</Typography>
           </Box>
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Card className='content' sx={{ background: '#FBFCFF', marginBottom:0 }}>
+            <Card className='content' sx={{ background: state.theme === 'dark' ? '#0F0F0F':'#FBFCFF', marginBottom:0 }}>
               <CardContent>
                 <span className='error'>{successMsg}</span>
-                <Typography className='pledge_title' sx={{ pt: 2 }}>
+                <Typography className='pledge_title' sx={{ pt: 2,color:state.theme === 'dark' ? '#fff':'#17172C' }}>
                   My Pledge
                 </Typography>
                 <Typography className='pledge_desc'>
@@ -222,7 +225,7 @@ export default function Pledge() {
                           borderRadius: `12px`
                         },
                         fontSize: '24px',
-                        color: '#17172C',
+                        color: state.theme === 'dark' ? '#fff':'#17172C',
                         fontWeight: 600,
                       },
                       '& legend': { display: 'none' },
@@ -232,7 +235,10 @@ export default function Pledge() {
                       startAdornment: <InputAdornment position="start">$</InputAdornment>
                     }}
                     disabled={isStepTwo}
-                    onChange={(e) => setPledge({ ...pledge, amount: e.target.value })}
+                    onChange={(e) => {
+                      if(e.target.value.match(/^([0-9]{1,})?(\.)?([0-9]{1,2})?$/))
+                        setPledge({ ...pledge, amount: e.target.value })
+                    }}
                   />
                   <span className='error'>{error.amount}</span>
                 </div>
@@ -243,7 +249,7 @@ export default function Pledge() {
                       sx={{
                         width: '103px',
                         height: '48px',
-                        background: '#0E1446',
+                        background: state.theme === 'dark' ? '#fff':'#0E1446',
                         borderRadius: '10px',
                         '& legend': { display: 'none' }
                       }}
@@ -273,7 +279,7 @@ export default function Pledge() {
                           borderRadius: `12px`
                         },
                         fontSize: '24px',
-                        color: '#17172C',
+                        color: state.theme === 'dark' ? '#fff':'#17172C',
                         fontWeight: 600,
                       },
                       '& legend': { display: 'none' },
@@ -289,7 +295,7 @@ export default function Pledge() {
                       sx={{
                         width: '103px',
                         height: '48px',
-                        background: '#0E1446',
+                        background: state.theme === 'dark' ? '#fff':'#0E1446',
                         borderRadius: '10px'
                       }}
                       style={{textTransform: 'none'}}
@@ -310,7 +316,7 @@ export default function Pledge() {
                           borderRadius: `12px`
                         },
                         fontSize: '24px',
-                        color: '#17172C',
+                        color: state.theme === 'dark' ? '#fff':'#17172C',
                         fontWeight: 600,
                         input: { "&::placeholder": { fontSize: 13 }}
                       }
@@ -327,7 +333,7 @@ export default function Pledge() {
                       sx={{
                         width: '103px',
                         height: '48px',
-                        background: '#0E1446',
+                        background: state.theme === 'dark' ? '#fff':'#0E1446',
                         borderRadius: '10px'
                       }}
                       style={{textTransform: 'none'}}

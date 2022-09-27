@@ -154,3 +154,11 @@ body {
     background: linear-gradient(180deg, #d0d0d5 0%, #FAFAFF 100%);
     box-shadow: inset 3.30274e-16px 5.39378px 5.39378px rgb(222 222 222 / 50%), inset -3.30274e-16px -5.39378px 5.39378px rgb(255 255 255 / 50%);
 }
+
+.pro_back_dark {
+    width: 165px;
+    height: 165px;
+    border-radius: 80px;
+    background: linear-gradient(180deg, #29292B 0%, #1F1F21 100%);
+    box-shadow: inset 4.16561e-16px 6.80296px 14.8px rgba(20, 20, 22, 0.6), inset -4.16561e-16px -6.80296px 6.80296px rgba(29, 30, 31, 0.5);
+}

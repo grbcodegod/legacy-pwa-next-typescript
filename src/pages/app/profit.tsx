@@ -98,16 +98,18 @@ export default function Profit() {
                 <div style={{margin: '12px 18px 0 12px'}}>
                   <Card sx={{borderRadius: '20px', height: '102px', border: '1px solid #6D43FD'}}>
                     <Grid container>
-                      <Grid item xs={3}>
+                      <Grid item xs={4}>
                         <div style={{float: 'right'}}>
-                          <img src='../../../balance.png' width={40} style={{ marginTop: 25 }} />
+                          <img src='../../../balance.png' width={35} style={{ marginTop: 15 }} />
                         </div>
                       </Grid>
-                      <Grid item xs={9}>
-                        <div style={{paddingTop: 12}}>
+                      <Grid item xs={6}>
+                        <div style={{paddingTop: 10}}>
                           <Typography style={{ color: '#0E1446', fontSize: 30, fontWeight: 600 }}>${data.investor_payout_sum.toLocaleString()}</Typography>
-                          <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>My Balance</Typography>
                         </div>
+                      </Grid>
+                      <Grid item xs={12}>
+                          <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>Total Profits to Date</Typography>
                       </Grid>
                     </Grid>
                   </Card>
@@ -131,18 +133,17 @@ export default function Profit() {
                       <Grid container>
                         <Grid item xs={4}>
                           <div style={{paddingTop: 10}}>
-                            <span>{p.profit_name}</span>
+                            <span>{month[p.month-1]}</span>
                           </div>
                           <div id='profit_year'>
-                            <span>{new Date(p.createdAt).getFullYear()}</span>
+                            <span>{p.year}</span>
                           </div>
                         </Grid>
                         <Grid item xs={4}>
-                          <p style={{paddingTop: 13}}>${p.amount.toLocaleString()}</p>
+                          <p style={{paddingTop: 13}}>${parseFloat(p.amount.toFixed(2)).toLocaleString()}</p>
                         </Grid>
                         <Grid item xs={4}>
                           <p style={{paddingTop: 13}}>{p.percentage.toFixed(2)}%</p>
-                          {/* <p style={{paddingTop: 13}}>{new Number(4.5).toFixed(2)}%</p> */}
                         </Grid>
                       </Grid>
                     </Card>

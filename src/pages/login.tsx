@@ -16,12 +16,14 @@ import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
 import axios from 'axios'
 import config from '../config'
 import { useSnackbar } from 'notistack';
+import { Actions, useAppShell } from 'components/providers/AppShellProvider'
 
 export default function Login() {
   const router = useRouter()
   const [user, setUser] = useState({ email: '', password: '' })
   const { enqueueSnackbar } = useSnackbar();
   const [error,setError]=useState({email:'',password:''})
+  const { state, dispatch } = useAppShell()
 
   const onLogin = async () => {
     try {
@@ -52,7 +54,7 @@ export default function Login() {
           <CardContent>
             {/* <img src='legacy-logo-black.png' width={168} height={51} /> */}
             <img src='logo.png' width={80} height={80} />
-            <Typography className='log_title' style={{paddingTop: 20}}>
+            <Typography className='log_title' style={{paddingTop: 20,color: state.theme === 'dark' ? '#fff':'#0E1446'}}>
               Welcome back
             </Typography>
             <div style={{ marginTop: 50, float: 'left' }}>
@@ -142,7 +144,7 @@ export default function Login() {
                   >
                     <Button type='submit' variant='contained' fullWidth
                       style={{ height: 64, backgroundColor: '#6D43FD',textTransform: 'none' }}
-                      sx={{ borderRadius: '15px', fontSize: 20 }}
+                      sx={{ borderRadius: '15px', fontSize: 20,color:'#fff' }}
                       onClick={() => onLogin()}
                     >
                       Log In
@@ -151,7 +153,7 @@ export default function Login() {
                 </Grid>
                 <Grid item xs={12} style={{ textAlign: 'center' }}>
                   <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    <Typography style={{ color: '#848AA4', marginRight: 10 }}>Don’t have an account?{" "}
+                    <Typography style={{ color: state.theme === 'dark' ? '#fff':'#848AA4', marginRight: 10 }}>Don’t have an account?{" "}
                     </Typography>
                     <Link passHref href='/register'>
                       <Typography style={{ color: '#6D43FD', cursor: 'pointer' }}>Sign Up</Typography>

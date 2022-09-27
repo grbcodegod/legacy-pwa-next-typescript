@@ -180,7 +180,7 @@ export default function Profile() {
                 </div>
                 <div style={{padding: '0 12px'}}>
                   <div style={{width: '100%'}}>
-                  <span style={{ paddingTop: 0, fontSize: 15, fontWeight: 600, lineHeight: '30px', color: '#0E1446' }}>{auth.referral_code}</span>
+                  <span style={{ paddingTop: 0, fontSize: 15, fontWeight: 600, lineHeight: '30px', color: '#0E1446' }}>{auth.fullname}</span>
                   </div>
                   <div style={{width: '100%'}}>
                   <span style={{ paddingTop: 0, fontSize: 12, fontWeight: 600, lineHeight: '30px', color: '#93989F' }}>{auth.referral_code}</span>
