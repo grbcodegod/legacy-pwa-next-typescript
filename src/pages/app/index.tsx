@@ -148,12 +148,12 @@ export default function Home() {
             </Grid>
             <Grid item xs={12}>
               <div style={{margin: '24px 34px 0px 34px'}}>
-              <a href="southone_agreement.pdf" target="_blank" style={{textDecoration: 'none'}}>
+              <a href="southone_overview.pdf" target="_blank" style={{textDecoration: 'none'}}>
                 <Button type='submit' variant='contained' fullWidth
                   style={{ height: 64, backgroundColor: '#6D43FD',textTransform: 'none' }}
                   sx={{ borderRadius: '15px', fontSize: 18, fontWeight: 600, color:'#fff' }}
                 >
-                  SOUTHONE AGREEMENT
+                  SOUTHONE OVERVIEW
                 </Button></a>
               </div>
             </Grid>

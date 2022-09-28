@@ -124,7 +124,7 @@ export default function Account() {
               </Card>
             </Grid>
             <Grid item xs={6}>
-              <Card style={{ border: '1px solid #0E1446', borderRadius: 20, width: 150, height: 150, marginLeft: 12, marginRight: 24, cursor: 'pointer' }} onClick={() => goReferralCommission()}>
+              <Card style={{ border: '1px solid #0E1446', borderRadius: 20, width: 150, height: 150, marginLeft: 12, marginRight: 24, cursor: 'pointer' }} onClick={() => goReferrals()}>
                 <img src='../../../referral_balance.png' width={40} style={{ marginTop: 20 }} />
                 {/* <Typography style={{ color: '#0E1446', fontSize: 26, fontWeight: 600 }}>${data.referral_payout_sum.toLocaleString()}</Typography> */}
                 <Typography style={{ color: state.theme === 'dark' ? '#fff':'#0E1446', fontSize: 26, fontWeight: 600 }}>${data.referral_volume.toLocaleString()}</Typography>

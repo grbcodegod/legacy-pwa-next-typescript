@@ -31,7 +31,7 @@ const month = [
   'December'
 ]
 
-export default function Referrals() {
+export default function MyReferrals() {
   const router = useRouter()
   const { enqueueSnackbar } = useSnackbar();
   const [auth, setAuth] = useState({
@@ -169,50 +169,35 @@ export default function Referrals() {
             <Grid container>
               <Grid item xs={12}>
                 <div style={{margin: '12px 18px 0 12px'}}>
-                  <Grid container>
-                    <Grid item xs={3}>
-                      {/* <div style={{paddingTop: 20, cursor: 'pointer'}} onClick={()=>selMonth(-1)}>
-                        <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>{prevMonth}</Typography>
-                      </div> */}
-                    </Grid>
-                    <Grid item xs={6}>
-                      {/* <Card sx={{borderRadius: '15px', height: '60px', border: '1px solid #6D43FD', cursor: 'pointer'}} onClick={()=>selMonth(mons[1], 1)}>
-                        <div style={{paddingTop: 20}}>
-                          <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>{mons[1]}</Typography>
+                <div style={{margin: '12px 18px 0 12px'}}>
+                  <Card sx={{borderRadius: '20px', height: '102px', border: '1px solid #6D43FD'}}>
+                    <Grid container>
+                      <Grid item xs={4}>
+                        <div style={{float: 'right'}}>
+                          <img src='../../../referral_balance.png' width={35} style={{ marginTop: 15 }} />
                         </div>
-                      </Card> */}
-                      <LocalizationProvider dateAdapter={AdapterDayjs}>
-                       <DatePicker
-                        views={['year', 'month']}
-                        openTo="month"
-                        // label="Year and Month"
-                        minDate={dayjs('2012-03-01')}
-                        maxDate={dayjs('2023-06-01')}
-                        value={curMonth}
-                        onChange={(newValue) => changeDatePicker(newValue)}
-                        renderInput={(params) => <TextField {...params} helperText={null} />}
-                      />
-                      </LocalizationProvider>
+                      </Grid>
+                      <Grid item xs={6}>
+                      <div style={{paddingTop: 10}}>
+                          <Typography style={{ color: '#0E1446', fontSize: 30, fontWeight: 600 }}>$</Typography>
+                        </div>
+                      </Grid>
+                      <Grid item xs={12}>
+                          <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>Total Referral Capital To Date</Typography>
+                      </Grid>
                     </Grid>
-                    <Grid item xs={3}>
-                      {/* <div style={{paddingTop: 20, cursor: 'pointer'}} onClick={()=>selMonth(1)}>
-                        <Typography style={{ color: '#0E1446', fontSize: 14, fontWeight: 600 }}>{nextMonth}</Typography>
-                      </div> */}
-                    </Grid>
-                  </Grid>
+                  </Card>
+                </div>
                   <div style={{color: '#2F394E', fontSize: 14, fontWeight: 700}}>
                     <Grid container>
-                      <Grid item xs={3}>
-                        <p>Referrals</p>
+                      <Grid item xs={4}>
+                        <p>Name</p>
                       </Grid>
-                      <Grid item xs={3}>
-                        <p>Captial</p>
+                      <Grid item xs={4}>
+                        <p>Capital</p>
                       </Grid>
-                      <Grid item xs={3}>
-                        <p>Pledged</p>
-                      </Grid>
-                      <Grid item xs={3}>
-                        <p>TXID</p>
+                      <Grid item xs={4}>
+                        <p>Total Profit</p>
                       </Grid>
                     </Grid>
                   </div>
@@ -221,22 +206,21 @@ export default function Referrals() {
                   {filters.map((p, index)=>
                     <Card sx={{marginBottom: '10px', borderRadius: '12px', fontSize: 13, fontWeight: 600, color:'#454446', boxShadow: 'none'}} key={index}>
                       <Grid container>
-                        <Grid item xs={3}>
+                        <Grid item xs={4}>
                           <div style={{paddingTop: 10}}>
                             <span>{p.app_user_name || ''}</span>
                           </div>
-                          <div id='profit_amount'>
+                          {/* <div id='profit_amount'>
+                            <span>${p.base_amount?parseFloat(p.base_amount.toFixed(2)).toLocaleString() : ''}</span>
+                          </div> */}
+                        </Grid>
+                        <Grid item xs={4}>
+                          <div id='profit_amount' style={{paddingTop:15}}>
                             <span>${p.base_amount?parseFloat(p.base_amount.toFixed(2)).toLocaleString() : ''}</span>
                           </div>
                         </Grid>
-                        <Grid item xs={3}>
-                          <p style={{paddingTop: 13}}>${p.base_amount?parseFloat(p.base_amount.toFixed(2)).toLocaleString() : ''}</p>
-                        </Grid>
-                        <Grid item xs={3}>
-                          <p style={{paddingTop: 13}}></p>
-                        </Grid>
-                        <Grid item xs={3}>
-                          <p style={{paddingTop: 13}}></p>
+                        <Grid item xs={4}>
+                          
                         </Grid>
                       </Grid>
                     </Card>
@@ -246,10 +230,9 @@ export default function Referrals() {
             </Grid>
           </Card>
         </div>
-        {/* <MobileBottomNav selIndex={3} /> */}
       </div>
     </div>
   )
 }
 
-Referrals.layout = AppLayout
+MyReferrals.layout = AppLayout
