@@ -11,10 +11,10 @@ Working demo: https://material-pwa.vercel.app/
 - [Theming](#theming)
 - [Onboarding slideshow](#onboarding-slideshow)
 - [Service worker](#service-worker)
-  * [service worker setup](#service-worker-setup)
-  * [offline fallback](#offline-fallback)
-  * [installation prompt](#installation-prompt)
-  * [app shortcuts](#app-shortcuts)
+  - [service worker setup](#service-worker-setup)
+  - [offline fallback](#offline-fallback)
+  - [installation prompt](#installation-prompt)
+  - [app shortcuts](#app-shortcuts)
 - [Custom Babel.js config](#custom-babeljs-config)
 - [Future](#future)
 - [Blog post](#blog-post)
@@ -26,33 +26,6 @@ Working demo: https://material-pwa.vercel.app/
 ## Motivation
 
 Setting up PWA's involves a lot of moving parts, so I've decided to create a template repository, that I would always keep up to date, and it will enable me to get started quickly.
-
-## Layout
-
-The application supports both desktop and mobile layouts.
-
-The desktop layout has a sidebar on the left side that can open and close.
-![desktop layout](./doc-assets/desktop-layout.gif)
-
-The mobile layout has two options.
-
-- Traditional layout with a sidebar that can be swiped to open/close
-
-![mobile layout](./doc-assets/mobile-layout.gif)
-
-- Modern layout where menu items are at the bottom
-
-![mobile layout bottom](./doc-assets/mobile-bottom-menu.gif)
-
-## Theming
-
-- There are two themes dark and light, and they can easily be customized.
-
-## Onboarding slideshow
-
-I've also included an onboarding slideshow which is usually present in native apps. This is optional and it can easily be removed.
-
-https://user-images.githubusercontent.com/390700/174054384-3eeb975b-c39a-414a-a93c-48f6fbfefd7b.mp4
 
 ## Service worker
 
@@ -74,12 +47,6 @@ Also, there is `network offline` detection, if the browser loses network connect
 ### installation prompt
 
 The application also has a custom prompt for the installation of the app. Please note that the installation prompt only works on the desktop OS'es and Android, no IOS.
-
-### app shortcuts
-
-The application also has set some demo shortcuts which show up if the application is installed. You can read more about PWA Shortcuts at [Get things done quickly with app shortcuts](https://web.dev/app-shortcuts/)
-
-![pwa shortcuts](./doc-assets/shortcuts.gif)
 
 ## Custom Babel.js config
 
